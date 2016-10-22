@@ -34,6 +34,15 @@
                     </div>
                 </div>
                 <ul class="nav nav-list" style="top: 0px;">
+                    <li id="dashboard" class="">
+                        <a href="${ctx}/">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text"> 工作台 </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
                     <li id="blog-manager">
                         <a href="javascript:" class="dropdown-toggle">
                             <i class="menu-icon fa fa-code"></i>
@@ -62,24 +71,42 @@
 
                                 <b class="arrow"></b>
                             </li>
+
+                            <li id="api-manager" >
+                                <a href="${ctx}/api">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Api管理
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="sys-manager">
+                        <a href="javascript:" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-coffee"></i>
+                            <span class="menu-text"> 系统管理 </span>
+
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <b class="arrow"></b>
+
+                        <ul class="submenu nav-show" style="display: block;">
+                            <li id="code-manager">
+                                <a href="${ctx}/code">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    错误码管理
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="ace-scroll nav-scroll">
-            <div class="scroll-track scroll-active" style="display: block; height: 192px;">
-                <div class="scroll-bar"
-                     style="transition-property: top; transition-duration: 0.1s; top: 0px; height: 92px;"></div>
-            </div>
-            <div class="scroll-content" style="max-height: 192px;">
-                <div style="height: 401px; width: 8px;"></div>
-            </div>
-        </div>
     </div>
 
-    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse" style="z-index: 1;">
-        <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left"
-           data-icon2="ace-icon fa fa-angle-double-right"></i>
-    </div>
 </div>

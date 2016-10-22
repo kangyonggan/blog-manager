@@ -3,7 +3,6 @@ package com.kangyonggan.bm.controller;
 import com.github.pagehelper.PageInfo;
 import com.kangyonggan.bm.model.Category;
 import com.kangyonggan.bm.service.CategoryService;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +18,6 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("category")
-@Log4j2
 public class CategoryController {
 
     private static final String PATH_ROOT = "category/";

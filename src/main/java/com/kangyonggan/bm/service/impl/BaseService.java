@@ -15,7 +15,7 @@ import java.util.List;
 public abstract class BaseService<T> {
 
     @Autowired
-    protected MyMapper<T> mapper;
+    protected MyMapper<T> myMapper;
 
     /**
      * 根据实体类不为null的字段进行查询,条件全部使用=号and条件
@@ -24,7 +24,7 @@ public abstract class BaseService<T> {
      * @return List<T>
      */
     public List<T> select(T entity) {
-        return mapper.select(entity);
+        return myMapper.select(entity);
     }
 
     /**
@@ -34,7 +34,7 @@ public abstract class BaseService<T> {
      * @return
      */
     public List<T> selectByExample(Object example) {
-        return mapper.selectByExample(example);
+        return myMapper.selectByExample(example);
     }
 
     /**
@@ -44,7 +44,7 @@ public abstract class BaseService<T> {
      * @return int
      */
     public int count(T entity) {
-        return mapper.selectCount(entity);
+        return myMapper.selectCount(entity);
     }
 
     /**
@@ -56,7 +56,7 @@ public abstract class BaseService<T> {
      * @return T
      */
     public T selectByPrimaryKey(Object key) {
-        return mapper.selectByPrimaryKey(key);
+        return myMapper.selectByPrimaryKey(key);
     }
 
     /**
@@ -66,7 +66,7 @@ public abstract class BaseService<T> {
      * @return T
      */
     public T selectOne(T entity) {
-        return mapper.selectOne(entity);
+        return myMapper.selectOne(entity);
     }
 
     /**
@@ -77,7 +77,7 @@ public abstract class BaseService<T> {
      * @return int
      */
     public int save(T entity) {
-        return mapper.insert(entity);
+        return myMapper.insert(entity);
     }
 
     /**
@@ -88,7 +88,7 @@ public abstract class BaseService<T> {
      * @return int
      */
     public int insertSelective(T entity) {
-        return mapper.insertSelective(entity);
+        return myMapper.insertSelective(entity);
     }
 
     /**
@@ -98,7 +98,7 @@ public abstract class BaseService<T> {
      * @return int
      */
     public int delete(T entity) {
-        return mapper.delete(entity);
+        return myMapper.delete(entity);
     }
 
     /**
@@ -110,7 +110,7 @@ public abstract class BaseService<T> {
      * @return int
      */
     public int deleteByPrimaryKey(Object key) {
-        return mapper.deleteByPrimaryKey(key);
+        return myMapper.deleteByPrimaryKey(key);
     }
 
     /**
@@ -120,7 +120,7 @@ public abstract class BaseService<T> {
      * @return int
      */
     public int updateByPrimaryKey(T entity) {
-        return mapper.updateByPrimaryKey(entity);
+        return myMapper.updateByPrimaryKey(entity);
     }
 
     /**
@@ -131,7 +131,7 @@ public abstract class BaseService<T> {
      * @return int
      */
     public int updateByPrimaryKeySelective(T entity) {
-        return mapper.updateByPrimaryKeySelective(entity);
+        return myMapper.updateByPrimaryKeySelective(entity);
     }
 
 }

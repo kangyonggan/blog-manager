@@ -1,10 +1,8 @@
 package com.kangyonggan.bm.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.kangyonggan.bm.model.Article;
-import com.kangyonggan.bm.model.Category;
-import com.kangyonggan.bm.service.ArticleService;
-import com.kangyonggan.bm.service.CategoryService;
+import com.kangyonggan.bm.model.Api;
+import com.kangyonggan.bm.service.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,69 +17,59 @@ import java.util.List;
  * @since 16/10/13
  */
 @Controller
-@RequestMapping("article")
-public class ArticleController {
+@RequestMapping("api")
+public class ApiController {
 
-    private static final String PATH_ROOT = "article/";
+    private static final String PATH_ROOT = "api/";
     private static final String PATH_LIST = PATH_ROOT + "list";
     private static final String PATH_FORM = PATH_ROOT + "form";
 
     @Autowired
-    private CategoryService categoryService;
-
-    @Autowired
-    private ArticleService articleService;
+    private ApiService apiService;
 
     /**
-     * 文章管理
+     * api管理
      *
      * @param pageNum
-     * @param code
-     * @param title
+     * @param name
      * @param model
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
     public String list(@RequestParam(value = "p", required = false, defaultValue = "1") int pageNum,
-                       @RequestParam(value = "code", required = false, defaultValue = "") String code,
-                       @RequestParam(value = "title", required = false, defaultValue = "") String title,
+                       @RequestParam(value = "name", required = false, defaultValue = "") String name,
                        Model model) {
-        List<Article> articles = articleService.searchArticles(pageNum, code, title);
-        PageInfo<Article> page = new PageInfo(articles);
-        List<Category> categories = categoryService.findAllCategories();
+        List<Api> apis = apiService.searchApis(pageNum, name);
+        PageInfo<Api> page = new PageInfo(apis);
 
         model.addAttribute("page", page);
-        model.addAttribute("categories", categories);
         return PATH_LIST;
     }
 
     /**
-     * 添加文章
+     * 添加api
      *
      * @param model
      * @return
      */
     @RequestMapping(value = "create", method = RequestMethod.GET)
     public String create(Model model) {
-        List<Category> categories = categoryService.findAllCategories();
-
-        model.addAttribute("article", new Article());
-        model.addAttribute("categories", categories);
+        model.addAttribute("api", new Api());
         return PATH_FORM;
     }
 
     /**
-     * 保存文章
+     * 保存api
      *
-     * @param article
+     * @param api
      * @param result
      * @return
      */
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public String save(@ModelAttribute("article") @Valid Article article,
+    public String save(@ModelAttribute("api") @Valid Api api,
                        BindingResult result) {
         if (!result.hasErrors()) {
-            articleService.saveArticle(article);
+            apiService.saveApi(api);
             return "redirect:/" + PATH_ROOT;
         } else {
             return PATH_FORM;
@@ -89,7 +77,7 @@ public class ArticleController {
     }
 
     /**
-     * 修改文章
+     * 修改api
      *
      * @param id
      * @param model
@@ -97,26 +85,24 @@ public class ArticleController {
      */
     @RequestMapping(value = "{id:[\\d]+}/edit", method = RequestMethod.GET)
     public String edit(@PathVariable("id") Long id, Model model) {
-        Article article = articleService.findArticleById(id);
-        List<Category> categories = categoryService.findAllCategories();
+        Api api = apiService.findApiById(id);
 
-        model.addAttribute("article", article);
-        model.addAttribute("categories", categories);
+        model.addAttribute("api", api);
         return PATH_FORM;
     }
 
     /**
-     * 更新文章
+     * 更新api
      *
-     * @param article
+     * @param api
      * @param result
      * @return
      */
     @RequestMapping(value = "update", method = RequestMethod.POST)
-    public String update(@ModelAttribute("article") @Valid Article article,
+    public String update(@ModelAttribute("api") @Valid Api api,
                        BindingResult result) {
         if (!result.hasErrors()) {
-            articleService.updateArticle(article);
+            apiService.updateApi(api);
             return "redirect:/" + PATH_ROOT;
         } else {
             return PATH_FORM;
@@ -124,28 +110,30 @@ public class ArticleController {
     }
 
     /**
-     * 删除文章
+     * 删除api
      *
      * @param id
      * @return
      */
     @RequestMapping(value = "{id:[\\d]+}/delete", method = RequestMethod.GET)
     public String delete(@PathVariable("id") Long id) {
-        Article article = articleService.findArticleById(id);
-        articleService.deleteArticle(article);
+        Api api = apiService.findApiById(id);
+        apiService.deleteApi(api);
+
         return "redirect:/" + PATH_ROOT;
     }
 
     /**
-     * 恢复文章
+     * 恢复api
      *
      * @param id
      * @return
      */
     @RequestMapping(value = "{id:[\\d]+}/recover", method = RequestMethod.GET)
     public String recover(@PathVariable("id") Long id) {
-        Article article = articleService.findArticleById(id);
-        articleService.recoverArticle(article);
+        Api api = apiService.findApiById(id);
+        apiService.recoverApi(api);
+
         return "redirect:/" + PATH_ROOT;
     }
 

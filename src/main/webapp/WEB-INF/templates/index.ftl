@@ -17,4 +17,10 @@
 </div>
 </@override>
 
+<@override name="script">
+    <script>
+        $('#dashboard').addClass('active');
+    </script>
+</@override>
+
 <@extends name="layout.ftl"/>
