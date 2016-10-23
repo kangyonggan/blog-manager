@@ -16,10 +16,10 @@ public class ErrorCode {
     private Long id;
 
     /**
-     * api id
+     * api代码
      */
-    @Column(name = "api_id")
-    private Long apiId;
+    @Column(name = "api_code")
+    private String apiCode;
 
     /**
      * api错误码

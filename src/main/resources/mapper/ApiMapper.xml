@@ -6,19 +6,11 @@
           WARNING - @mbggenerated
         -->
         <id column="id" property="id" jdbcType="BIGINT"/>
-        <result column="api_id" property="apiId" jdbcType="BIGINT"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="description" property="description" jdbcType="VARCHAR"/>
-        <result column="url" property="url" jdbcType="VARCHAR"/>
-        <result column="method" property="method" jdbcType="VARCHAR"/>
-        <result column="error_name" property="errorName" jdbcType="VARCHAR"/>
-        <result column="error_msg_name" property="errorMsgName" jdbcType="VARCHAR"/>
-        <result column="data_name" property="dataDesc" jdbcType="VARCHAR"/>
-        <result column="data_desc" property="dataDesc" jdbcType="VARCHAR"/>
-        <result column="data" property="data" jdbcType="VARCHAR"/>
         <result column="is_deleted" property="isDeleted" jdbcType="TINYINT"/>
         <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
         <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
-        <result column="body" property="body" jdbcType="LONGVARCHAR"/>
     </resultMap>
 </mapper>

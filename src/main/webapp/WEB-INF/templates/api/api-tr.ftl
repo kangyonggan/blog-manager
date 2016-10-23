@@ -1,9 +1,8 @@
 <tr>
     <td>${api.id}</td>
+    <td>${api.code}</td>
     <td>${api.name}</td>
-    <td>${api.url}</td>
-    <td>${api.method}</td>
-    <td>${api.description!''}</td>
+    <td width="50%">${api.description!''}</td>
     <td>${(api.isDeleted==0)?string('未删除', '已删除')}</td>
     <td>${api.createdTime?datetime}</td>
     <td>

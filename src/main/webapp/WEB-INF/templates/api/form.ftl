@@ -8,63 +8,21 @@
             <input type="hidden" name="id" value="${api.id}"/>
         </#if>
         <div class="form-group">
+            <label for="code" class="col-sm-3 control-label no-padding-right">代码<span class="red">*</span></label>
+            <div class="col-xs-12 col-sm-5">
+                <input type="text" name="code" value="${api.code!''}" class="width-100"/>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="name" class="col-sm-3 control-label no-padding-right">名称<span class="red">*</span></label>
             <div class="col-xs-12 col-sm-5">
                 <input type="text" name="name" value="${api.name!''}" class="width-100"/>
             </div>
         </div>
         <div class="form-group">
-            <label for="url" class="col-sm-3 control-label no-padding-right">地址<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" name="url" value="${api.url!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="method" class="col-sm-3 control-label no-padding-right">方法<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" name="method" value="${api.method!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="errorName" class="col-sm-3 control-label no-padding-right">错误码字段名称<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" name="errorName" value="${api.errorName!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="errorMsgName" class="col-sm-3 control-label no-padding-right">错误码描述字段名称<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" name="errorMsgName" value="${api.errorMsgName!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="dataName" class="col-sm-3 control-label no-padding-right">数据名称<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" name="dataName" value="${api.dataName!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="dataDesc" class="col-sm-3 control-label no-padding-right">字段描述<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" name="dataDesc" value="${api.dataDesc!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="data" class="col-sm-3 control-label no-padding-right">字段<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" name="data" value="${api.data!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
             <label for="description" class="col-sm-3 control-label no-padding-right">描述<span class="red">*</span></label>
             <div class="col-xs-12 col-sm-5">
                 <input type="text" name="description" value="${api.description!''}" class="width-100"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="body" class="col-sm-3 control-label no-padding-right">内容<span class="red">*</span></label>
-            <div class="col-xs-12 col-sm-5">
-                <textarea name="body" rows="10" class="width-100">${api.body!''}</textarea>
             </div>
         </div>
 

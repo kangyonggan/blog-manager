@@ -26,9 +26,8 @@
         <thead>
         <tr>
             <th>ID</th>
+            <th>代码</th>
             <th>名称</th>
-            <th>地址</th>
-            <th>方法</th>
             <th>描述</th>
             <th>是否删除</th>
             <th>创建时间</th>

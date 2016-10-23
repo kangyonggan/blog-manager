@@ -1,6 +1,6 @@
 <tr>
     <td>${errorCode.id}</td>
-    <td>${errorCode.apiId}</td>
+    <td>${errorCode.apiCode}</td>
     <td>${errorCode.apiErrorCode}</td>
     <td>${errorCode.apiErrorDesc}</td>
     <td>${errorCode.errorCode}</td>

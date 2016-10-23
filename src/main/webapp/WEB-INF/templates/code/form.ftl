@@ -2,15 +2,15 @@
 <#assign pageName="${errorCode.id???string('编辑错误码','添加错误码')}"/>
 
 <@override name="content">
-<div class="col-xs-12">aaa
+<div class="col-xs-12">
     <form method="post" class="form-horizontal" action="${ctx}/code/${action}">
         <#if errorCode.id??>
             <input type="hidden" name="id" value="${errorCode.id}"/>
         </#if>
         <div class="form-group">
-            <label for="apiId" class="col-sm-3 control-label no-padding-right">Api Id<span class="red">*</span></label>
+            <label for="apiCode" class="col-sm-3 control-label no-padding-right">Api代码<span class="red">*</span></label>
             <div class="col-xs-12 col-sm-5">
-                <input type="text" name="apiId" value="${errorCode.apiId!''}" class="width-100"/>
+                <input type="text" name="apiCode" value="${errorCode.apiCode!''}" class="width-100"/>
             </div>
         </div>
         <div class="form-group">

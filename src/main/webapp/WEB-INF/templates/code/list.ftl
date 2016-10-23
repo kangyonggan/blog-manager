@@ -12,7 +12,7 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>Api Id</th>
+            <th>Api代码</th>
             <th>Api错误码</th>
             <th>Api错误描述</th>
             <th>内部错误码</th>

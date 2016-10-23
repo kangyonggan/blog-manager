@@ -57,7 +57,7 @@
 <#include "sidebar.ftl">
     <div class="main-content">
         <div class="main-content-inner">
-        <#include "breadcrumbs.ftl">
+        <#--<#include "breadcrumbs.ftl">-->
             <div class="page-content">
                 <div class="page-header">
                     <h1>

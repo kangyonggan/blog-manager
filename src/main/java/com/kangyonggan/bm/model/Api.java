@@ -18,6 +18,11 @@ public class Api {
     private Long id;
 
     /**
+     * api代码
+     */
+    private String code;
+
+    /**
      * api名称
      */
     private String name;
@@ -26,45 +31,6 @@ public class Api {
      * api描述
      */
     private String description;
-
-    /**
-     * api地址
-     */
-    private String url;
-
-    /**
-     * api请求方式
-     */
-    private String method;
-
-    /**
-     * 错误码字段名称
-     */
-    @Column(name = "error_name")
-    private String errorName;
-
-    /**
-     * 错误码描述字段名称
-     */
-    @Column(name = "error_msg_name")
-    private String errorMsgName;
-
-    /**
-     * 数据名称
-     */
-    @Column(name = "data_name")
-    private String dataName;
-
-    /**
-     * 字段描述
-     */
-    @Column(name = "data_desc")
-    private String dataDesc;
-
-    /**
-     * 字段
-     */
-    private String data;
 
     /**
      * 是否删除 {0:未删除, 1:已删除}
@@ -83,9 +49,4 @@ public class Api {
      */
     @Column(name = "updated_time")
     private Date updatedTime;
-
-    /**
-     * 内容
-     */
-    private String body;
 }
