@@ -102,6 +102,14 @@
 
                                 <b class="arrow"></b>
                             </li>
+                            <li id="command-manager">
+                                <a href="${ctx}/command">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    指令管理
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
                         </ul>
                     </li>
                 </ul>
