@@ -4,7 +4,7 @@
     <td>${command.params!''}</td>
     <td>${command.status}</td>
     <td id="show-${command.id}">
-        <#if command.result??>
+        <#if command.result?? && command.result!=''>
             ${command.result?substring(0, 25)}... | <span style="cursor: pointer" onclick="document.getElementById('show-${command.id}').className='hidden';document.getElementById('hide-${command.id}').className='';">查看全部</span>
         </#if>
     </td>
