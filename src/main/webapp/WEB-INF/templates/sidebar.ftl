@@ -72,14 +72,14 @@
                                 <b class="arrow"></b>
                             </li>
 
-                            <li id="api-manager" >
-                                <a href="${ctx}/api">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Api管理
-                                </a>
+                            <#--<li id="api-manager" >-->
+                                <#--<a href="${ctx}/api">-->
+                                    <#--<i class="menu-icon fa fa-caret-right"></i>-->
+                                    <#--Api管理-->
+                                <#--</a>-->
 
-                                <b class="arrow"></b>
-                            </li>
+                                <#--<b class="arrow"></b>-->
+                            <#--</li>-->
                         </ul>
                     </li>
 
