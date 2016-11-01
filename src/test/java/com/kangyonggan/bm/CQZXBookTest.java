@@ -79,7 +79,7 @@ public class CQZXBookTest extends BaseTestCase {
 
     private String getBody(String url) throws Exception {
         Document doc = Jsoup.parse(new URL(BASE_URL + url), 100000);
-        return doc.select("#content").text();
+        return doc.select("#content").html();
     }
 
 }
