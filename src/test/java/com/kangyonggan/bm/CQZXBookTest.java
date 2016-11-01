@@ -67,6 +67,7 @@ public class CQZXBookTest extends BaseTestCase {
             chapter.setBookCode(book.getCode());
             chapter.setBookName(book.getName());
             chapter.setTitle(title);
+            chapter.setChapterNo(i + 1);
 
             chapter.setBody(getBody(url));
 

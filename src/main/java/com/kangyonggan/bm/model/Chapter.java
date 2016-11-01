@@ -31,6 +31,12 @@ public class Chapter {
     private String title;
 
     /**
+     * 章节序号
+     */
+    @Column(name = "chapter_no")
+    private Integer chapterNo;
+
+    /**
      * 是否删除 {0:未删除, 1:已删除}
      */
     @Column(name = "is_deleted")
