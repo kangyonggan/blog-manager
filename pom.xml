@@ -31,6 +31,7 @@
         <mysql.version>5.1.34</mysql.version>
         <!--spring-->
         <spring.version>4.2.6.RELEASE</spring.version>
+        <junit.version>4.9</junit.version>
         <!--aspectj-->
         <aspectjrt.version>1.6.9</aspectjrt.version>
         <aspectjweaver.version>1.6.1</aspectjweaver.version>
@@ -48,6 +49,7 @@
         <freemarker.version>2.3.22</freemarker.version>
         <servlet.version>3.1.0</servlet.version>
         <hibernate-validator.version>5.2.3.Final</hibernate-validator.version>
+        <jsoup.version>1.9.2</jsoup.version>
     </properties>
 
     <build>
@@ -185,6 +187,18 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
 
         <!-- aspectj -->
         <dependency>
@@ -266,6 +280,14 @@
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
         </dependency>
+
+        <!--jsoup-->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
+        </dependency>
+
 
     </dependencies>
 </project>

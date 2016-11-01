@@ -16,6 +16,8 @@
         <setting name="defaultStatementTimeout" value="25000"/>
         <!-- 映射AA_BB至aaBb驼峰 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--使用log4j2输出日志-->
+        <setting name="logImpl" value="LOG4J2"/>
     </settings>
 
 </configuration>

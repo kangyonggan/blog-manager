@@ -19,7 +19,7 @@
             <DefaultRolloverStrategy max="30"/>
             <Filters>
                 <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
-                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+                <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
             </Filters>
         </RollingRandomAccessFile>
         <RollingRandomAccessFile name="ErrorFile" fileName="${LOG_HOME}/${ERROR_FILE_NAME}.log"
