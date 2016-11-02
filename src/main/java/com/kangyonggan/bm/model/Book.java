@@ -34,6 +34,12 @@ public class Book {
     private String summary;
 
     /**
+     * 是否完结 {0:未完结, 1:已完结}
+     */
+    @Column(name = "is_finished")
+    private Byte isFinished;
+
+    /**
      * 是否删除 {0:未删除, 1:已删除}
      */
     @Column(name = "is_deleted")
