@@ -19,6 +19,7 @@
         <!--plugin-->
         <plugin.compiler.version>3.2</plugin.compiler.version>
         <plugin.tomcat.version>2.2</plugin.tomcat.version>
+        <surefire.version>2.18.1</surefire.version>
         <!--lombok-->
         <lombok.version>1.16.8</lombok.version>
         <!--mybatis-->
@@ -76,6 +77,16 @@
                     <source>${compiler.level}</source>
                     <target>${compiler.level}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!--ignore test-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
 

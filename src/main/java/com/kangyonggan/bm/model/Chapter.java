@@ -1,8 +1,12 @@
 package com.kangyonggan.bm.model;
 
-import java.util.Date;
-import javax.persistence.*;
 import lombok.Data;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Date;
 
 @Data
 public class Chapter {
@@ -58,4 +62,8 @@ public class Chapter {
      * 内容
      */
     private String body;
+
+    public String toString() {
+        return String.format("Chapter(id:%s,title:%s,bookCode:%s,bookName:%s,chapterNo:%s)", id, title, bookCode, bookName, chapterNo);
+    }
 }
