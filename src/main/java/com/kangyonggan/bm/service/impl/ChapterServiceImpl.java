@@ -1,5 +1,6 @@
 package com.kangyonggan.bm.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.kangyonggan.bm.constants.AppConstants;
 import com.kangyonggan.bm.model.Chapter;
 import com.kangyonggan.bm.service.ChapterService;
@@ -26,7 +27,8 @@ public class ChapterServiceImpl extends BaseService<Chapter> implements ChapterS
         example.createCriteria().andEqualTo("bookCode", code).andEqualTo("isDeleted", AppConstants.IS_DELETED_NO);
         example.setOrderByClause("chapter_no desc");
 
+        PageHelper.startPage(1, 1);
         List<Chapter> chapters = super.selectByExample(example);
-        return chapters.isEmpty() ? null : chapters.get(0);
+        return chapters == null || chapters.isEmpty() ? null : chapters.get(0);
     }
 }
