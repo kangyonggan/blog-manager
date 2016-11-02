@@ -15,4 +15,11 @@ public interface ChapterService {
      */
     void saveChapter(Chapter chapter);
 
+    /**
+     * 查找最后一章
+     *
+     * @param code
+     * @return
+     */
+    Chapter findLastChapter(String code);
 }
