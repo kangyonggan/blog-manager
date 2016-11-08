@@ -72,44 +72,6 @@
                                 <b class="arrow"></b>
                             </li>
 
-                            <#--<li id="api-manager" >-->
-                                <#--<a href="${ctx}/api">-->
-                                    <#--<i class="menu-icon fa fa-caret-right"></i>-->
-                                    <#--Api管理-->
-                                <#--</a>-->
-
-                                <#--<b class="arrow"></b>-->
-                            <#--</li>-->
-                        </ul>
-                    </li>
-
-                    <li id="sys-manager">
-                        <a href="javascript:" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-coffee"></i>
-                            <span class="menu-text"> 系统管理 </span>
-
-                            <b class="arrow fa fa-angle-down"></b>
-                        </a>
-
-                        <b class="arrow"></b>
-
-                        <ul class="submenu nav-show" style="display: block;">
-                            <li id="code-manager">
-                                <a href="${ctx}/code">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    错误码管理
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-                            <li id="command-manager">
-                                <a href="${ctx}/command">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    指令管理
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
                         </ul>
                     </li>
                 </ul>

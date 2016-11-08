@@ -11,6 +11,8 @@ import com.kangyonggan.bm.service.CategoryService;
 import com.kangyonggan.bm.util.FenCi;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -30,6 +32,7 @@ public class ArticleServiceImpl extends BaseService<Article> implements ArticleS
     @Autowired
     private CategoryService categoryService;
 
+    @CacheEvict(cacheNames = "article", allEntries = true)
     @Override
     public void saveArticle(Article article) {
         Category category = categoryService.findCategoryByCode(article.getCategoryCode());
@@ -41,6 +44,7 @@ public class ArticleServiceImpl extends BaseService<Article> implements ArticleS
         saveArticleIndex(article);
     }
 
+    @CacheEvict(cacheNames = "article", allEntries = true)
     @Override
     public void updateArticle(Article article) {
         Category category = categoryService.findCategoryByCode(article.getCategoryCode());
@@ -52,6 +56,7 @@ public class ArticleServiceImpl extends BaseService<Article> implements ArticleS
         updateArticleIndex(article);
     }
 
+    @CacheEvict(cacheNames = "article", allEntries = true)
     @Override
     public void deleteArticle(Article article) {
         article.setUpdatedTime(new Date());
@@ -60,6 +65,7 @@ public class ArticleServiceImpl extends BaseService<Article> implements ArticleS
         super.updateByPrimaryKeySelective(article);
     }
 
+    @CacheEvict(cacheNames = "article", allEntries = true)
     @Override
     public void recoverArticle(Article article) {
         article.setUpdatedTime(new Date());
@@ -68,6 +74,7 @@ public class ArticleServiceImpl extends BaseService<Article> implements ArticleS
         super.updateByPrimaryKeySelective(article);
     }
 
+    @Cacheable(value = "article", key = "'article_id_' + #id")
     @Override
     public Article findArticleById(Long id) {
         return super.selectByPrimaryKey(id);

@@ -5,6 +5,8 @@ import com.kangyonggan.bm.constants.AppConstants;
 import com.kangyonggan.bm.model.Category;
 import com.kangyonggan.bm.service.CategoryService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -18,16 +20,19 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl extends BaseService<Category> implements CategoryService {
 
+    @CacheEvict(cacheNames = "category", allEntries = true)
     @Override
     public void saveCategory(Category category) {
         super.insertSelective(category);
     }
 
+    @CacheEvict(cacheNames = "category", allEntries = true)
     @Override
     public void updateCategory(Category category) {
         super.updateByPrimaryKeySelective(category);
     }
 
+    @CacheEvict(cacheNames = "category", allEntries = true)
     @Override
     public void deleteCategory(Category category) {
         category.setIsDeleted(AppConstants.IS_DELETED_YES);
@@ -35,6 +40,7 @@ public class CategoryServiceImpl extends BaseService<Category> implements Catego
         super.updateByPrimaryKeySelective(category);
     }
 
+    @CacheEvict(cacheNames = "category", allEntries = true)
     @Override
     public void recoverCategory(Category category) {
         category.setUpdatedTime(new Date());
@@ -48,6 +54,7 @@ public class CategoryServiceImpl extends BaseService<Category> implements Catego
         return super.selectByPrimaryKey(id);
     }
 
+    @Cacheable(value = "category", key = "'category_code_' + #categoryCode")
     @Override
     public Category findCategoryByCode(String categoryCode) {
         Category category = new Category();
@@ -71,6 +78,7 @@ public class CategoryServiceImpl extends BaseService<Category> implements Catego
         return super.selectByExample(example);
     }
 
+    @Cacheable(value = "category", key = "'category_all'")
     @Override
     public List<Category> findAllCategories() {
         Category category = new Category();
